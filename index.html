@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$BURGER</title>
+    <meta property="og:title" content="$BURGER">
+    <meta property="og:image" content="/burger.gif">
+    <meta property="og:description" content="Solana's #1 food token 🙂">
+    <meta name="description" content="Solana's #1 food token 🙂">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#A04000">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <script src="/index.js" defer></script>
+</head>
+<body>
+    <img id="bg" src="/bg.webp" draggable="false">
+    <div id="top-text">
+        <marquee direction="left" scrollamount="20">
+            TICKER: $BURGER
+            <div class="big-space"></div>
+            BUY $BURGER NOW
+            <div class="big-space"></div>
+            EVERYONE MUST EAT
+        </marquee>
+    </div>
+
+    <div id="burger-container" style="transition: opacity 0.25s ease-in-out;">
+        <video id="burger-img" muted autoplay loop src="burger.webm"></video>
+    </div>
+
+    <div id="infobox-container" style="transition: 0.5s ease-in-out;">
+        <div id="infobox" style="transition: 0.25s ease-in-out;">
+            <div id="expand-button" onclick="expandInfobox()" style="cursor: pointer;">[EXPAND]</div>
+            <div id="socials-container">
+                <div id="socials">
+                    <a href="burger_solana.html" target="_blank"><img src="pumpfun.webp" width="36px" draggable="false"></a>
+                    <img src="telegram.svg" width="36px" draggable="false">
+                </div>
+            </div>
+        </div>
+
+        <div id="expanded-infobox-template" style="display: none;">
+            $BURGER isn’t just a token; it’s an experience. Imagine a world where every transaction is a bite of deliciousness, where your wallet smells like a fresh-off-the-grill burger. This memecoin promises to spice up your portfolio with humor and a whole lot of flavor.<br><br>
+
+            <br>
+
+            Get ready to taste the future with $BURGER - the memecoin that’s more than just a snack; it’s a meal deal for your digital wallet!
+            <div id="collapse-button" onclick="unexpandInfobox()" style="cursor: pointer;">[COLLAPSE]</div>
+        </div>
+    </div>
+
+</body>
+</html>
