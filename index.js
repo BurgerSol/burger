@@ -21,26 +21,20 @@ if (onWebkit) {
     let defaultInfoboxHtml = infobox.innerHTML;
     let expandedInfoboxHtml = expandedInfoboxTemplate.innerHTML;
 
-window.expandInfobox = function() {
-    let burger = document.getElementById('burger-container');
-    burger.style.opacity = 0;
+    window.expandInfobox = function() {
+        let burger = document.getElementById('burger-container');
+        burger.style.opacity = 0;
 
-    let infoboxContainer = document.getElementById('infobox-container');
-    infoboxContainer.classList.add('expanded');
+        let infoboxContainer = document.getElementById('infobox-container');
+        infoboxContainer.classList.add('expanded');
 
-    let infobox = document.getElementById('infobox');
+        let infobox = document.getElementById('infobox');
 
-    setTimeout(() => {
-        infobox.classList.add('expanded');
-        setTimeout(() => infobox.innerHTML = expandedInfoboxHtml, 125); // In the middle of transition
-
-        // Play the music when expanding the infobox
-        let audio = document.getElementById('background-music');
-        if (audio.paused) {
-            audio.play();
-        }
-    }, 500);
-}
+        setTimeout(() => {
+            infobox.classList.add('expanded');
+            setTimeout(() => infobox.innerHTML = expandedInfoboxHtml, 125); // in middle of transition
+        }, 500);
+    };
 
     window.unexpandInfobox = function() {
         let burger = document.getElementById('burger-container');
