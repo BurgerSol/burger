@@ -1,0 +1,261 @@
+@font-face {
+    font-family: 'Krabby Patty';
+    src: 
+        local('Krabby Patty'), /* Local reference */
+        url('/KrabbyPatty.ttf') format('truetype'); /* Correct path */
+}
+
+
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+#bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    user-select: none;
+}
+
+#top-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    font-family: 'Krabby Patty';
+    font-size: 28px;
+    color: white;
+}
+
+.big-space {
+    display: inline-block;
+    width: 75vw;
+}
+
+#burger-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: 12s sizeBigger forwards ease-in-out;
+}
+
+#burger-and-glow {
+    position: relative;
+}
+
+#burger-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1px;
+    animation: 12s size forwards ease-in-out;
+    user-select: none;
+}
+
+#glow-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1px;
+    opacity: 0.9;
+    filter: drop-shadow(0 0 10px #fff) drop-shadow(0 0 20px #fff) drop-shadow(0 0 30px #fff);
+    animation: 12s sizeBigger forwards ease-in-out, 4s pulse infinite alternate, 12s rotate infinite linear;
+    user-select: none;
+}
+
+#infobox-container {
+    position: absolute;
+    top: 86.25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#infobox-container.expanded {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#infobox {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 8px;
+    width: 18vw;
+    min-height: 143px;
+    height: 12vh;
+    line-height: 22px;
+    box-sizing: border-box;
+    color: white;
+    font-family: 'Krabby Patty';
+    font-size: 24px;
+    text-align: center;
+}
+
+#infobox::after {
+    content: '';
+    display: block;
+    height: 54px;
+}
+
+#infobox.expanded {
+    padding: 12px;
+    font-size: 28px;
+    line-height: 28px;
+    min-width: 45vw;
+    min-height: 45vh;
+    width: auto;
+    height: auto;
+}
+
+#infobox.expanded::after {
+    content: '';
+    display: block;
+    height: 0px;
+}
+
+#contract-address {
+    font-family: monospace;
+    font-size: 16px;
+}
+
+#expand-button, #collapse-button {
+    user-select: none;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    font-size: 24px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#collapse-button {
+    position: relative;
+    font-size: 28px;
+    margin-top: 24px;
+}
+
+#socials-container {
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    width: 100%;
+    height: 36px;
+}
+
+#socials {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+#socials img {
+    cursor: pointer;
+}
+
+@media (max-width: 900px) or (max-height: 640px) {
+    #infobox-container {
+        top: calc(100vh - 16vh);
+        left: 0;
+        transform: none;
+    }
+
+    #infobox {
+        width: 100vw;
+        height: 16vh;
+        min-height: auto;
+    }
+
+    #infobox-container.expanded {
+        top: 0;
+        left: 0;
+        transform: none;
+    }
+
+    #infobox.expanded {
+        width: 100vw !important;
+        height: 100vh !important;
+        overflow-y: auto;
+    }
+
+    #expand-button {
+        position: absolute;
+        top: 4px;
+        right: 0;
+        margin: 0;
+    }
+
+    #burger-container {
+        animation: 12s sizeBiggerPhone forwards ease-in-out;
+    }
+
+    #burger-img {
+        animation: 12s sizePhone forwards ease-in-out;
+    }
+
+    #glow-img {
+        animation: 12s sizeBiggerPhone forwards ease-in-out, 4s pulse infinite alternate, 12s rotate infinite linear;
+    }
+}
+
+@keyframes size {
+    0% {
+        width: 1px;
+    }
+    100% {
+        width: 25vw;
+    }
+}
+
+@keyframes sizePhone {
+    0% {
+        width: 1px;
+    }
+    100% {
+        width: 50vw;
+    }
+}
+
+@keyframes sizeBigger {
+    0% {
+        width: 1px;
+    }
+    100% {
+        width: 30vw;
+    }
+}
+
+@keyframes sizeBiggerPhone {
+    0% {
+        width: 1px;
+    }
+    100% {
+        width: 55vw;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    50% {
+        transform: translate(-50%, -50%) rotate(180deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.9;
+    }
+    100% {
+        opacity: 0.3;
+    }
+}
